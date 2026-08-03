@@ -1,4 +1,4 @@
-const { cleanStack } = require('./index.cjs');[cite: 3]
+const { cleanStack } = require('./index.cjs');
 
 if (process.env.NODE_ENV === 'production') {
   console.warn(
@@ -7,39 +7,39 @@ if (process.env.NODE_ENV === 'production') {
     'It is recommended to use this package only during development (NODE_ENV=development).'
   );
 } else {
-  const originalPrepareStackTrace = Error.prepareStackTrace;[cite: 3]
+  const originalPrepareStackTrace = Error.prepareStackTrace;
 
-  Error.prepareStackTrace = (error, structuredStackTrace) => {[cite: 3]
-    let stack;[cite: 3]
-    if (originalPrepareStackTrace) {[cite: 3]
-      stack = originalPrepareStackTrace(error, structuredStackTrace);[cite: 3]
+  Error.prepareStackTrace = (error, structuredStackTrace) => {
+    let stack;
+    if (originalPrepareStackTrace) {
+      stack = originalPrepareStackTrace(error, structuredStackTrace);
     } else {
-      const name = error.name || 'Error';[cite: 3]
-      const message = error.message || '';[cite: 3]
-      const header = message ? `${name}: ${message}` : name;[cite: 3]
+      const name = error.name || 'Error';
+      const message = error.message || '';
+      const header = message ? `${name}: ${message}` : name;
       
-      const frames = structuredStackTrace.map(frame => `    at ${frame.toString()}`);[cite: 3]
-      stack = header + '\n' + frames.join('\n');[cite: 3]
+      const frames = structuredStackTrace.map(frame => `    at ${frame.toString()}`);
+      stack = header + '\n' + frames.join('\n');
     }
     
-    return cleanStack(stack);[cite: 3]
+    return cleanStack(stack);
   };
 
-  process.on('uncaughtException', (error) => {[cite: 3]
-    console.error('\n💥 Uncaught Exception:\n');[cite: 3]
-    console.error(cleanStack(error));[cite: 3]
-    console.error('\n');[cite: 3]
+  process.on('uncaughtException', (error) => {
+    console.error('\n💥 Uncaught Exception:\n');
+    console.error(cleanStack(error));
+    console.error('\n');
   });
 
-  process.on('unhandledRejection', (reason) => {[cite: 3]
-    console.error('\n⚠️  Unhandled Promise Rejection:\n');[cite: 3]
+  process.on('unhandledRejection', (reason) => {
+    console.error('\n⚠️  Unhandled Promise Rejection:\n');
     
-    if (reason instanceof Error) {[cite: 3]
-      console.error(cleanStack(reason));[cite: 3]
+    if (reason instanceof Error) {
+      console.error(cleanStack(reason));
     } else {
-      console.error(reason);[cite: 3]
+      console.error(reason);
     }
     
-    console.error('\n');[cite: 3]
+    console.error('\n');
   });
 }
