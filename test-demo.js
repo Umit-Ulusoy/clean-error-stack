@@ -1,4 +1,4 @@
-import 'clean-error-stack/register';
+import './register.js';
 
 console.log('🧪 clean-error-stack Test Suite\n');
 console.log('This file intentionally throws errors to demonstrate how the package works.\n');

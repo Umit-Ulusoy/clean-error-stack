@@ -3,7 +3,7 @@ const colors = {
   yellow: (text) => `\x1b[33m${text}\x1b[0m`,
 };
 
-export function cleanStack(stackOrError) {
+function cleanStack(stackOrError) {
   if (!stackOrError) return '';
 
   const stack = typeof stackOrError === 'string' 
@@ -45,7 +45,7 @@ export function cleanStack(stackOrError) {
   return colors.red(errorMessage) + '\n' + cleanedLines.join('\n');
 }
 
-export function cleanError(error) {
+function cleanError(error) {
   if (error && typeof error === 'object' && error.stack) {
     return {
       ...error,
@@ -57,4 +57,7 @@ export function cleanError(error) {
   return error;
 }
 
-export default cleanStack;
+module.exports = cleanStack;
+module.exports.cleanStack = cleanStack;
+module.exports.cleanError = cleanError;
+module.exports.default = cleanStack;
