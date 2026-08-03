@@ -3,22 +3,30 @@
   "version": "1.0.0",
   "description": "Clean up messy Node.js stack traces in development. Filter out node_modules and internal code, focus only on your code.",
   "type": "module",
-  "main": "./index.js",
+  "main": "./index.cjs",
+  "module": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "types": "./index.d.ts",
-      "import": "./index.js"
+      "import": "./index.js",
+      "require": "./index.cjs"
     },
-    "./register": "./register.js"
+    "./register": {
+      "import": "./register.js",
+      "require": "./register.cjs"
+    }
   },
   "files": [
     "index.js",
+    "index.cjs",
     "index.d.ts",
-    "register.js"
+    "register.js",
+    "register.cjs"
   ],
   "sideEffects": [
-    "./register.js"
+    "./register.js",
+    "./register.cjs"
   ],
   "scripts": {
     "test": "echo \"No tests specified yet\""
