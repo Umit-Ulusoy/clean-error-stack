@@ -1,4 +1,4 @@
-require('./register.cjs');
+const { cleanStack } = require('./index.cjs');
 
 console.log('🧪 CommonJS Test\n');
 

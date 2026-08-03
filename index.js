@@ -4,11 +4,13 @@ const colors = {
 };
 
 export function cleanStack(stackOrError) {
+  if (!stackOrError) return '';
+
   const stack = typeof stackOrError === 'string' 
     ? stackOrError 
     : (stackOrError?.stack || String(stackOrError));
 
-  const lines = stack.split('\n');
+  const lines = stack.split(/\r?\n/);
   
   if (lines.length <= 1) {
     return colors.red(stack);
@@ -44,8 +46,13 @@ export function cleanStack(stackOrError) {
 }
 
 export function cleanError(error) {
-  if (error && error.stack) {
-    error.stack = cleanStack(error.stack);
+  if (error && typeof error === 'object' && error.stack) {
+    return {
+      ...error,
+      name: error.name,
+      message: error.message,
+      stack: cleanStack(error.stack)
+    };
   }
   return error;
 }
