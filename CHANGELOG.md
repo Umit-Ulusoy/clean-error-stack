@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Umit-Ulusoy/clean-error-stack/compare/v1.1.0...v1.1.1) (2026-08-03)
+
+
+### Bug Fixes
+
+* **ci:** align repository metadata for npm provenance ([496f343](https://github.com/Umit-Ulusoy/clean-error-stack/commit/496f343a3c080b309419b0534cc7e4f1e8916e6b))
+
 # [1.1.0](https://github.com/umit-ulusoy/clean-error-stack/compare/v1.0.0...v1.1.0) (2026-08-03)
 
 
