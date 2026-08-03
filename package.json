@@ -33,12 +33,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/umit-ulusoy/clean-error-stack.git"
+    "url": "https://github.com/Umit-Ulusoy/clean-error-stack"
   },
   "bugs": {
-    "url": "https://github.com/umit-ulusoy/clean-error-stack/issues"
+    "url": "https://github.com/Umit-Ulusoy/clean-error-stack/issues"
   },
-  "homepage": "https://github.com/umit-ulusoy/clean-error-stack#readme",
+  "homepage": "https://github.com/Umit-Ulusoy/clean-error-stack#readme",
   "keywords": [
     "error",
     "stack",
@@ -59,7 +59,8 @@
     "node": ">=14.0.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "devDependencies": {
     "@semantic-release/changelog": "^7.0.0",
