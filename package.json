@@ -1,6 +1,6 @@
 {
   "name": "clean-error-stack",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Clean up messy Node.js stack traces in development. Filter out node_modules and internal code, focus only on your code.",
   "type": "module",
   "main": "./index.cjs",

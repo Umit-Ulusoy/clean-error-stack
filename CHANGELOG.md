@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Umit-Ulusoy/clean-error-stack/compare/v1.1.1...v1.1.2) (2026-08-03)
+
+
+### Bug Fixes
+
+* **cjs:** repair commonjs register entry ([54637dc](https://github.com/Umit-Ulusoy/clean-error-stack/commit/54637dcb41e6a3134a6c145a7963268cecd0f2b6))
+
 ## [1.1.1](https://github.com/Umit-Ulusoy/clean-error-stack/compare/v1.1.0...v1.1.1) (2026-08-03)
 
 
