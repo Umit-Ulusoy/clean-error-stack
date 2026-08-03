@@ -21,7 +21,7 @@
     "./register.js"
   ],
   "scripts": {
-    "test": "node test-demo.js"
+    "test": "echo \"No tests specified yet\"
   },
   "repository": {
     "type": "git",
